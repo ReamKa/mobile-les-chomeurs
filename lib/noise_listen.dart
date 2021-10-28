@@ -2,10 +2,6 @@ import 'package:noise_meter/noise_meter.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-void main() {
-  runApp(new MyApp());
-}
-
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => new _MyAppState();
