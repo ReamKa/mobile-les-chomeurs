@@ -30,6 +30,9 @@ dependencies:
   flutter:
     sdk: flutter
   noise_meter: ^3.0.3
+  audio_streamer: ^2.0.3
+  permission_handler: ^8.2.5
+  meta: ^1.7.0
   hexcolor: ^2.0.5
 
 
