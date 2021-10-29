@@ -1,90 +1,165 @@
-import 'package:noise_meter/noise_meter.dart';
-import 'package:flutter/material.dart';
-import 'dart:async';
+// https://github.com/syncfusion/flutter-examples/blob/master/lib/samples/chart/dynamic_updates/live_update/real_time_line_chart.dart
 
-class MyApp extends StatefulWidget {
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:noise_meter/noise_meter.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+class NoiseListen extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _NoiseListenState createState() => _NoiseListenState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _NoiseListenState extends State<NoiseListen> {
   bool _isRecording = false;
+  // ignore: cancel_subscriptions
   StreamSubscription<NoiseReading>? _noiseSubscription;
   late NoiseMeter _noiseMeter;
+  double? maxDB;
+  double? meanDB;
+  List<double> chartData = <double>[];
 
   @override
   void initState() {
     super.initState();
-    _noiseMeter = new NoiseMeter(onError);
-  }
-
-  @override
-  void dispose() {
-    _noiseSubscription?.cancel();
-    super.dispose();
+    _noiseMeter = NoiseMeter(onError);
   }
 
   void onData(NoiseReading noiseReading) {
     this.setState(() {
-      if (!this._isRecording) {
-        this._isRecording = true;
-      }
+      if (!this._isRecording) this._isRecording = true;
     });
-    print(noiseReading.toString());
+    maxDB = noiseReading.maxDecibel;
+    meanDB = noiseReading.meanDecibel;
   }
 
-  void onError(Object error) {
-    print(error.toString());
+  void onError(Object e) {
+    print(e.toString());
     _isRecording = false;
   }
 
   void start() async {
     try {
       _noiseSubscription = _noiseMeter.noiseStream.listen(onData);
-    } catch (err) {
-      print(err);
+    } catch (e) {
+      print(e);
     }
   }
 
   void stop() async {
     try {
-      if (_noiseSubscription != null) {
-        _noiseSubscription!.cancel();
-        _noiseSubscription = null;
-      }
-      this.setState(() {
-        this._isRecording = false;
-      });
-    } catch (err) {
-      print('stopRecorder error: $err');
+      _noiseSubscription!.cancel();
+      _noiseSubscription = null;
+
+      this.setState(() => this._isRecording = false);
+    } catch (e) {
+      print('stopRecorder error: $e');
     }
   }
 
-  List<Widget> getContent() => <Widget>[
-    Container(
-        margin: EdgeInsets.all(25),
-        child: Column(children: [
-          Container(
-            child: Text(_isRecording ? "Mic: ON" : "Mic: OFF",
-                style: TextStyle(fontSize: 25, color: Colors.blue)),
-            margin: EdgeInsets.only(top: 20),
-          )
-        ])),
-  ];
+  void copyValue(
+      bool theme,
+      ) {
+    Clipboard.setData(
+      ClipboardData(
+          text: 'It\'s about ${maxDB!.toStringAsFixed(1)}dB loudness'),
+    ).then((_) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          behavior: SnackBarBehavior.floating,
+          duration: Duration(milliseconds: 2500),
+          content: Row(
+            children: [
+              Icon(
+                Icons.check,
+                size: 14,
+                color: theme ? Colors.white70 : Colors.black,
+              ),
+              SizedBox(width: 10),
+              Text('Copied')
+            ],
+          ),
+        ),
+      );
+    });
+  }
+
+  openGithub() async {
+    const url = 'https://github.com/iqfareez/noise_meter_flutter';
+    try {
+      await launch(url);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Could not launch $url'),
+        backgroundColor: Colors.red,
+      ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: getContent())),
-        floatingActionButton: FloatingActionButton(
-            backgroundColor: _isRecording ? Colors.red : Colors.green,
-            onPressed: _isRecording ? stop : start,
-            child: _isRecording ? Icon(Icons.stop) : Icon(Icons.mic)),
+    bool _isDark = Theme.of(context).brightness == Brightness.light;
+    if (chartData.length >= 25) {
+      chartData.removeAt(0);
+    }
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: _isDark ? Colors.green : Colors.green.shade800,
+        title: Text('dB Sound Meter'),
+        actions: [
+          IconButton(
+              tooltip: 'Source code on GitHub',
+              icon: Icon(Icons.code_outlined),
+              onPressed: openGithub),
+          IconButton(
+            tooltip: 'Copy value to clipboard',
+            icon: Icon(Icons.copy),
+            onPressed: maxDB != null ? () => copyValue(_isDark) : null,
+          )
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        label: Text(_isRecording ? 'Stop' : 'Start'),
+        onPressed: _isRecording ? stop : start,
+        icon: !_isRecording ? Icon(Icons.circle) : null,
+        backgroundColor: _isRecording ? Colors.red : Colors.green,
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Center(
+                child: Text(
+                  maxDB != null ? maxDB!.toStringAsFixed(2) : 'Press start',
+                  style: GoogleFonts.exo2(fontSize: 76),
+                ),
+              ),
+            ),
+            Text(
+              meanDB != null
+                  ? 'Mean: ${meanDB!.toStringAsFixed(2)}'
+                  : 'Awaiting data',
+              style: TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
+            ),
+            SizedBox(
+              height: 68,
+            ),
+          ],
+        ),
       ),
     );
   }
+}
+
+class _ChartData {
+  final double? maxDB;
+  final double? meanDB;
+  final double frames;
+
+  _ChartData(this.maxDB, this.meanDB, this.frames);
 }

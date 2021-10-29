@@ -29,11 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  noise_meter: ^3.0.3
-  audio_streamer: ^2.0.3
-  permission_handler: ^8.2.5
-  meta: ^1.7.0
-  hexcolor: ^2.0.5
+  noise_meter: ^3.0.1
+  syncfusion_flutter_charts: ^19.1.67
+  url_launcher: ^6.0.6
+  google_fonts: ^2.1.0
 
 
   # The following adds the Cupertino Icons font to your application.

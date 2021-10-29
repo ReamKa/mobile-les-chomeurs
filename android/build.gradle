@@ -6,7 +6,6 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.0'
-        compileSdkVersion 31
     }
 }
 
@@ -21,6 +20,11 @@ rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
     project.evaluationDependsOn(':app')
+    afterEvaluate { project ->
+        android {
+            compileSdkVersion 31
+        }
+    }
 }
 
 task clean(type: Delete) {
