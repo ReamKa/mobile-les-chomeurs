@@ -18,24 +18,34 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
     _currentPage = 0;
     super.initState();
   }
-   Color primaryColor = Color(0xFF9EA2A6);
+
+  Color primaryColor = Color(0xFF9EA2A6);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: AppBar(
-        backgroundColor: primaryColor ,
-          elevation: 0,
-          title: Image.asset(
-            "assets/images/Group 44.png",
-            fit: BoxFit.contain,
-            height: 90,
-            width: 90,
-          ),
+        backgroundColor: primaryColor,
+        toolbarHeight: 120,
         centerTitle: true,
-          toolbarHeight: 120,
+        elevation: 0,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            IconButton(
+              onPressed: () => exit(0),
+              iconSize: 90,
+              icon: Image.asset(
+                "assets/images/Group 44.png",
+              ),
+            ),
+          ],
+        ),
       ),
+      //centerTitle: true,
+      //toolbarHeight: 120,
+      //),
       //body: getPage(_currentPage),
       bottomNavigationBar: AnimatedBottomNav(
           currentIndex: _currentPage,
@@ -44,10 +54,11 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
               _currentPage = index;
             });
           }),
+      //),
     );
   }
 
-  getPage(int? page) {
+  /*getPage(int? page) {
     switch (page) {
       case 0:
         return Center(
@@ -65,7 +76,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
           child: Text("Profil"),
         ));
     }
-  }
+  }*/
 }
 
 class AnimatedBottomNav extends StatelessWidget {
@@ -78,15 +89,16 @@ class AnimatedBottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     Color primaryColor = Color(0xFF9EA2A6);
     return Container(
-
       height: kToolbarHeight,
-      decoration: BoxDecoration(color: const Color(0xFF9EA2A6), ),
+      decoration: const BoxDecoration(
+        color: Color(0xFF9EA2A6),
+      ),
       child: Row(
         children: <Widget>[
           Expanded(
             child: InkWell(
               child: IconButton(
-                iconSize: 18,
+                iconSize: 48,
                 icon: Image.asset("assets/Icones/coolicon3.png"),
                 onPressed: () => exit(0),
               ),
@@ -95,16 +107,16 @@ class AnimatedBottomNav extends StatelessWidget {
           Expanded(
             child: InkWell(
               child: IconButton(
-                iconSize: 18,
+                iconSize: 48,
                 icon: Image.asset("assets/Icones/Save_fill.png"),
-                onPressed:() => exit(0),
+                onPressed: () => exit(0),
               ),
             ),
           ),
           Expanded(
             child: InkWell(
               child: IconButton(
-                iconSize : 18,
+                iconSize: 48,
                 icon: Image.asset("assets/Icones/parametre.png"),
                 onPressed: () => exit(0),
               ),
@@ -123,7 +135,7 @@ class BottomNavItem extends StatelessWidget {
   final Color? activeColor;
   final Color? inactiveColor;
   final String? title;
-   BottomNavItem(
+  BottomNavItem(
       {Key? key,
       this.isActive = false,
       this.icon,
