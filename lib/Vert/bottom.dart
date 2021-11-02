@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 //import 'package:dernier/Vert/lib/images';
 //import 'package:chomeurs/Vert/main.dart/';
@@ -84,8 +86,11 @@ class AnimatedBottomNav extends StatelessWidget {
           Expanded(
             child: InkWell(
               //onTap: () => onChange!(0),
-              child: BottomNavItem(
-                icon: IconData(61077, fontFamily: 'MaterialIcons',),
+              child: IconButton(
+                iconSize: 18,
+                icon: Image.asset("assets/Icones/coolicon.png"),
+                onPressed: () => exit(0),
+                //icon: IconData(61077, fontFamily: 'MaterialIcons',),
               ),
             ),
           ),
