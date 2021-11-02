@@ -1,8 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-//import 'package:dernier/Vert/lib/images';
-//import 'package:chomeurs/Vert/main.dart/';
+import 'package:chomeurs/Vert/settings.dart';
 
 class AnimatedBottomBar extends StatefulWidget {
   static final String path = "lib/src/pages/animations/anim4.dart";
@@ -34,7 +32,12 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             IconButton(
-              onPressed: () => exit(0),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PageExterne()),
+                );
+              },
               iconSize: 90,
               icon: Image.asset(
                 "assets/images/Group 44.png",
@@ -46,7 +49,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
       //centerTitle: true,
       //toolbarHeight: 120,
       //),
-      //body: getPage(_currentPage),
+      body: getPage(_currentPage),
       bottomNavigationBar: AnimatedBottomNav(
           currentIndex: _currentPage,
           onChange: (index) {
@@ -58,12 +61,12 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
     );
   }
 
-  /*getPage(int? page) {
+  getPage(int? page) {
     switch (page) {
       case 0:
         return Center(
             child: Container(
-          child: Image.asset('assets/images/Group 44.png',width: 90,),
+          child: Text("Blabla"),
         ));
       case 1:
         return Center(
@@ -76,7 +79,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
           child: Text("Profil"),
         ));
     }
-  }*/
+  }
 }
 
 class AnimatedBottomNav extends StatelessWidget {
@@ -100,7 +103,13 @@ class AnimatedBottomNav extends StatelessWidget {
               child: IconButton(
                 iconSize: 48,
                 icon: Image.asset("assets/Icones/coolicon3.png"),
-                onPressed: () => exit(0),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PageExterne()),
+                  );
+                },
               ),
             ),
           ),
@@ -109,7 +118,13 @@ class AnimatedBottomNav extends StatelessWidget {
               child: IconButton(
                 iconSize: 48,
                 icon: Image.asset("assets/Icones/Save_fill.png"),
-                onPressed: () => exit(0),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PageExterne()),
+                  );
+                },
               ),
             ),
           ),
@@ -118,7 +133,13 @@ class AnimatedBottomNav extends StatelessWidget {
               child: IconButton(
                 iconSize: 48,
                 icon: Image.asset("assets/Icones/parametre.png"),
-                onPressed: () => exit(0),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PageExterne()),
+                  );
+                },
               ),
             ),
           ),
