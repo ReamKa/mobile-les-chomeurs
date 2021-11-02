@@ -85,33 +85,28 @@ class AnimatedBottomNav extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: InkWell(
-              //onTap: () => onChange!(0),
               child: IconButton(
                 iconSize: 18,
-                icon: Image.asset("assets/Icones/coolicon.png"),
+                icon: Image.asset("assets/Icones/coolicon3.png"),
                 onPressed: () => exit(0),
-                //icon: IconData(61077, fontFamily: 'MaterialIcons',),
               ),
             ),
           ),
           Expanded(
             child: InkWell(
-              //onTap: () => onChange!(1),
-              child: BottomNavItem(
-                icon: IconData(58704, fontFamily: 'MaterialIcons'),
-
-                //title: "User",
-                //isActive: currentIndex == 1,
+              child: IconButton(
+                iconSize: 18,
+                icon: Image.asset("assets/Icones/Save_fill.png"),
+                onPressed:() => exit(0),
               ),
             ),
           ),
           Expanded(
             child: InkWell(
-              //onTap: () => onChange!(2),
-              child: BottomNavItem(
-                icon: IconData(58751, fontFamily: 'MaterialIcons'),
-                //title: "Menu",
-                //isActive: currentIndex == 2,
+              child: IconButton(
+                iconSize : 18,
+                icon: Image.asset("assets/Icones/parametre.png"),
+                onPressed: () => exit(0),
               ),
             ),
           ),
