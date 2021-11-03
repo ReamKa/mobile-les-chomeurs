@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:chomeurs/Statistique/statistique_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chomeurs/Vert/settings.dart';
+import 'package:chomeurs/enregistrements.dart';
 
 class AnimatedBottomBar extends StatefulWidget {
   static final String path = "lib/src/pages/animations/anim4.dart";
@@ -123,7 +124,7 @@ class AnimatedBottomNav extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PageExterne()),
+                        builder: (context) => Enregistrements()),
                   );
                 },
               ),
