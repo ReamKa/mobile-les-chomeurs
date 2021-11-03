@@ -61,16 +61,16 @@ class _MyAppState extends State<MyApp> {
   }
 
   List<Widget> getContent() => <Widget>[
-    Container(
-        margin: EdgeInsets.all(25),
-        child: Column(children: [
-          Container(
-            child: Text(_isRecording ? "Mic: ON" : "Mic: OFF",
-                style: TextStyle(fontSize: 25, color: Colors.blue)),
-            margin: EdgeInsets.only(top: 20),
-          )
-        ])),
-  ];
+        Container(
+            margin: EdgeInsets.all(25),
+            child: Column(children: [
+              Container(
+                child: Text(_isRecording ? "Mic: ON" : "Mic: OFF",
+                    style: TextStyle(fontSize: 25, color: Colors.blue)),
+                margin: EdgeInsets.only(top: 20),
+              )
+            ])),
+      ];
 
   @override
   Widget build(BuildContext context) {
