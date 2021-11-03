@@ -42,7 +42,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
               },
               iconSize: 90,
               icon: Image.asset(
-                "assets/images/Group 44.png",
+                "assets/images/main_top.png",
               ),
             ),
           ],
