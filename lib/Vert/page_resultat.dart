@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:chomeurs/Statistique/statistique_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chomeurs/Vert/settings.dart';
 
@@ -137,7 +138,7 @@ class AnimatedBottomNav extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PageExterne()),
+                        builder: (context) => StatistiqueScreen()),
                   );
                 },
               ),
