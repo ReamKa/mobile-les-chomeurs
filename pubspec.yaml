@@ -29,6 +29,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  noise_meter: ^3.0.3
+  audio_streamer: ^2.0.3
+  permission_handler: ^8.2.5
+  meta: ^1.7.0
+  hexcolor: ^2.0.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -58,12 +63,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
   assets:
-    - Icones/coolicon1.png
-
+      - assets/images/
+      - assets/Icones/
+      - Icones/coolicon1.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
