@@ -17,49 +17,44 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(
-          body: Center(
-            child : MyStateFulWidget(),
+      home:  Scaffold(
+          body: GridView.count(
+            crossAxisCount: 2,
+            children :  [
+
+              IconButton(
+                icon: Image.asset('Icones/coolicon5.png'),
+                padding: const EdgeInsets.all(10.0),
+                iconSize: 50,
+                onPressed: () {},
+              ),
+
+              //const Text("test"),
+              IconButton(
+                icon: Image.asset('Icones/coolicon6.png'),
+                padding: const EdgeInsets.all(10.0),
+                iconSize: 50,
+                onPressed: () {},
+              ),
+
+              //const Text("test2"),
+              IconButton(
+                icon: Image.asset('Icones/coolicon.png'),
+                iconSize: 50,
+                onPressed: () {},
+              ),
+
+              //const Text("test3"),
+              IconButton(
+                icon: Image.asset('Icones/coolicon4.png'),
+                iconSize: 50,
+                onPressed: () {},
+              ),
+
+              //const Text("test4"),
+            ],
           )
       ),
-    );
-  }
-}
-
-class MyStateFulWidget extends StatefulWidget{
-  const MyStateFulWidget({Key? key}) : super(key: key);
-
-  @override
-  _MyStateFulWidgetState createState() => _MyStateFulWidgetState();
-}
-
-class _MyStateFulWidgetState extends State<MyStateFulWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        IconButton(
-          icon: Image.asset('Icones/coolicon5.png'),
-          iconSize: 50,
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: Image.asset('Icones/coolicon6.png'),
-          iconSize: 50,
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: Image.asset('Icones/coolicon.png'),
-          iconSize: 50,
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: Image.asset('Icones/coolicon4.png'),
-          iconSize: 50,
-          onPressed: () {},
-        ),
-      ],
     );
   }
 }
