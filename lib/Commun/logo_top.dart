@@ -14,7 +14,7 @@ class LogoTop extends StatelessWidget {
         children: <Widget>[
           Positioned(
               top: 50,
-              child: Image.asset("assets/icones/main_top.png",
+              child: Image.asset("assets/images/Group 44.png",
           )),
         ],
       ),
