@@ -44,7 +44,6 @@ class _BodyOrangeState extends State<BodyOrange> {
             child: Image.asset(
               "assets/images/rectangle.png",
               alignment: Alignment.bottomCenter,
-              height: 100,
             ),
           ),
         ],
