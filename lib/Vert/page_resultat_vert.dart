@@ -1,5 +1,4 @@
 import 'package:chomeurs/Parametres/parametres.dart';
-import 'package:chomeurs/Statistique/statistique_screen.dart';
 import 'package:chomeurs/Statistique/page_statistique.dart';
 
 import 'package:flutter/material.dart';
