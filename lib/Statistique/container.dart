@@ -1,3 +1,4 @@
+import 'package:chomeurs/Commun/nav.dart';
 import 'package:flutter/material.dart';
 
 class ContainerScreen extends StatelessWidget {
@@ -52,7 +53,6 @@ class ContainerScreen extends StatelessWidget {
                   color: Color(-12893604)),
             ),
           ),
-          for (var i in valueHistories) Text(i.toString()),
           Positioned(
             top: 75,
             right: 25,
