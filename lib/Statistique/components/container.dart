@@ -3,13 +3,7 @@ import 'package:flutter/material.dart';
 class ContainerScreen extends StatelessWidget {
   ContainerScreen({Key? key}) : super(key: key);
 
-  List<int> valueHistories = <int>[
-    12,
-    13,
-    15,
-    123,
-    147
-  ];
+  List<int> valueHistories = <int>[12, 13, 15, 123, 147];
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +28,14 @@ class ContainerScreen extends StatelessWidget {
                   fontSize: 30,
                   fontStyle: FontStyle.italic,
                   fontFamily: "Inter",
-                  color: Color(-12893604)
-              ),
+                  color: Color(-12893604)),
             ),
           ),
           Positioned(
-            top: 75,
-            left: 25,
-            child: Image.asset("assets/images/image 3.png")
-          ),
-           // ignore: prefer_const_constructors
+              top: 75,
+              left: 25,
+              child: Image.asset("assets/Icones/image 3.png")),
+          // ignore: prefer_const_constructors
           Positioned(
             top: 25,
             right: 25,
@@ -57,12 +49,10 @@ class ContainerScreen extends StatelessWidget {
                   fontSize: 30,
                   fontStyle: FontStyle.italic,
                   fontFamily: "Inter",
-                  color: Color(-12893604)
-              ),
+                  color: Color(-12893604)),
             ),
           ),
-          for (var i in valueHistories)
-            Text(i.toString()),
+          for (var i in valueHistories) Text(i.toString()),
           Positioned(
             top: 75,
             right: 25,
