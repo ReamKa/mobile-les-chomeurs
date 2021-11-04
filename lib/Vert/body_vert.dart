@@ -8,7 +8,6 @@ class BodyVert extends StatefulWidget {
 }
 
 class _BodyVertState extends State<BodyVert> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +24,11 @@ class _BodyVertState extends State<BodyVert> {
           )),
           const Expanded(
             child: Padding(
-              padding: EdgeInsets.fromLTRB(39,0,39,0),
+              padding: EdgeInsets.fromLTRB(39, 0, 39, 0),
               child: Text(
                 "La recommandation générale de l\'Environmental Protection Agency est de "
                 "limiter l\'exposition professionnelle à plus de 85 dB (environ le bruit d\'une tondeuse à gazon).",
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontSize: 18,
                   fontFamily: "Inter",
@@ -38,6 +37,13 @@ class _BodyVertState extends State<BodyVert> {
                   height: 1.5,
                 ),
               ),
+            ),
+          ),
+          Expanded(
+            child: Image.asset(
+              "assets/images/rectangle.png",
+              alignment: Alignment.bottomCenter,
+              height: 100,
             ),
           ),
         ],

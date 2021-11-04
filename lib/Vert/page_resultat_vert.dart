@@ -1,16 +1,15 @@
-import 'dart:io';
 import 'package:chomeurs/Statistique/statistique_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chomeurs/Vert/body_vert.dart';
 import 'package:chomeurs/enregistrements.dart';
 
-class AnimatedBottomBar extends StatefulWidget {
+class PageVert extends StatefulWidget {
   static final String path = "lib/src/pages/animations/anim4.dart";
   @override
-  _AnimatedBottomBarState createState() => _AnimatedBottomBarState();
+  _PageVertState createState() => _PageVertState();
 }
 
-class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
+class _PageVertState extends State<PageVert> {
   int? _currentPage;
 
   @override
@@ -27,7 +26,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: primaryColor,
-        toolbarHeight: 120,
+        toolbarHeight: 150,
         centerTitle: true,
         elevation: 0,
         title: Row(
@@ -61,26 +60,6 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
           }),
       //),
     );
-  }
-
-  getPage(int? page) {
-    switch (page) {
-      case 0:
-        return Center(
-            child: Container(
-          child: Text("Blabla"),
-        ));
-      case 1:
-        return Center(
-            child: Container(
-          child: Text("Enregistrements"),
-        ));
-      case 2:
-        return Center(
-            child: Container(
-          child: Text("Profil"),
-        ));
-    }
   }
 }
 
