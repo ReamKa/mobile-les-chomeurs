@@ -23,11 +23,10 @@ class _BodyParametres extends State<BodyParametres> {
           title: const Text("PARAMETRES"),
           centerTitle: true,
           titleTextStyle: const TextStyle(
-            fontFamily: "Inter",
-            fontStyle: FontStyle.italic,
-            fontSize: 40,
-            color: Color.fromRGBO(59, 66, 92, 100)
-          ),
+              fontFamily: "Inter",
+              fontStyle: FontStyle.italic,
+              fontSize: 40,
+              color: Color.fromRGBO(59, 66, 92, 100)),
           backgroundColor: primaryColor,
           elevation: 0,
           bottomOpacity: 0,
@@ -51,8 +50,7 @@ class _BodyParametres extends State<BodyParametres> {
             IconButton(
               icon: Image.asset('Icones/coolicon6.png'),
               padding: const EdgeInsets.all(10.0),
-              onPressed: () {
-              },
+              onPressed: () {},
               tooltip: 'Contactez-nous!',
             ),
 
@@ -79,7 +77,8 @@ class _BodyParametres extends State<BodyParametres> {
           "assets/images/rectangle.png",
           alignment: Alignment.bottomCenter,
           height: 100,
-        ),),
+        ),
+      ),
     );
   }
 }

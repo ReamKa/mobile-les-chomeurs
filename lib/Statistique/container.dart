@@ -25,12 +25,12 @@ class ContainerScreen extends StatelessWidget {
               textAlign: TextAlign.left,
               // ignore: prefer_const_constructors
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
                   fontSize: 30,
                   fontStyle: FontStyle.italic,
                   fontFamily: "Inter",
-                  color: Color(-12893604)),
+                  color: Colors.black,
             ),
+          ),
           ),
           Positioned(
               top: 75,
@@ -46,18 +46,17 @@ class ContainerScreen extends StatelessWidget {
               textAlign: TextAlign.left,
               // ignore: prefer_const_constructors
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
                   fontSize: 30,
                   fontStyle: FontStyle.italic,
                   fontFamily: "Inter",
-                  color: Color(-12893604)),
+                  color: Colors.black),
             ),
           ),
-          Positioned(
-            top: 75,
-            right: 25,
-            child: Text(valueHistories.toString()),
-          ),
+              Positioned(
+                top: 75,
+                right: 25,
+                child: Text(valueHistories.toString()),
+              )
         ],
       ),
     );

@@ -110,8 +110,7 @@ class AnimatedBottomNav extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => PageStatistique()),
+                    MaterialPageRoute(builder: (context) => PageStatistique()),
                   );
                 },
               ),

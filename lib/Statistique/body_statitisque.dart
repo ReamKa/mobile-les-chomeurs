@@ -9,7 +9,6 @@ class BodyStatitisque extends StatefulWidget {
 }
 
 class _BodyStatitisqueState extends State<BodyStatitisque> {
-
   List<int> valueHistories = <int>[12, 13, 15, 123, 147];
   @override
   Widget build(BuildContext context) {
@@ -22,19 +21,25 @@ class _BodyStatitisqueState extends State<BodyStatitisque> {
           Positioned(
             left: 0,
             child: const Text(
-              "STATISTIQUE",
+              "STATISTIQUES",
               textAlign: TextAlign.center,
               // ignore: prefer_const_constructors
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 50,
+                  fontSize: 40,
                   fontStyle: FontStyle.italic,
                   fontFamily: "Inter",
-                  color: Color(-12893604)),
+                  color: Color.fromRGBO(59, 66, 92, 100)),
             ),
           ),
-          Expanded(child: ContainerScreen(),)
+          Expanded(
+            child: ContainerScreen(),
+          ),
         ],
+      ),
+      bottomNavigationBar: Image.asset(
+        "assets/images/rectangle.png",
+        alignment: Alignment.bottomCenter,
+        height: 100,
       ),
     );
   }

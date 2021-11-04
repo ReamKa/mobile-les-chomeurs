@@ -17,18 +17,18 @@ class _BodyRougeState extends State<BodyRouge> {
         children: <Widget>[
           Expanded(
               child: Image.asset(
-                "assets/Icones/icon_rouge.png",
-                width: 92,
-                height: 92,
-                alignment: Alignment.center,
-              )),
+            "assets/Icones/icon_rouge.png",
+            width: 92,
+            height: 92,
+            alignment: Alignment.center,
+          )),
           const Expanded(
             child: Padding(
               padding: EdgeInsets.fromLTRB(39, 0, 39, 0),
               child: Text(
                 "C\'est un message d'alerte… qui arrive bien tard ! En effet, les seuils de danger pour l\'audition et de détection de "
-                    "la douleur sont séparés de 40 dB environ."
-                    "Nous vous conseillons de vous en écarter afin de préserver votre santé.",
+                "la douleur sont séparés de 40 dB environ."
+                "Nous vous conseillons de vous en écarter afin de préserver votre santé.",
                 textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontSize: 18,

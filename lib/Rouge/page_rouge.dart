@@ -13,8 +13,6 @@ class PageRouge extends StatefulWidget {
 class _PageRougeState extends State<PageRouge> {
   int? _currentPage;
 
-
-
   @override
   void initState() {
     _currentPage = 0;
@@ -112,8 +110,7 @@ class AnimatedBottomNav extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => PageStatistique()),
+                    MaterialPageRoute(builder: (context) => PageStatistique()),
                   );
                 },
               ),

@@ -17,8 +17,10 @@ class Profile extends StatelessWidget {
           child: Column(
             children: <Widget>[
               ProfileHeader(
-                avatar: NetworkImage("https://www.numerama.com/content/uploads/2020/09/never-gonna-give-you-up-clip.jpg"),
-                coverImage: NetworkImage("https://www.numerama.com/content/uploads/2020/09/never-gonna-give-you-up-clip.jpg"),
+                avatar: NetworkImage(
+                    "https://www.numerama.com/content/uploads/2020/09/never-gonna-give-you-up-clip.jpg"),
+                coverImage: NetworkImage(
+                    "https://www.numerama.com/content/uploads/2020/09/never-gonna-give-you-up-clip.jpg"),
                 title: "Gros Bogoss",
                 subtitle: "Pauvre etudiant",
                 actions: <Widget>[
@@ -39,6 +41,7 @@ class Profile extends StatelessWidget {
         ));
   }
 }
+
 Color primaryColor = Color(0xFF9EA2A6);
 
 class UserInfo extends StatelessWidget {
@@ -120,11 +123,11 @@ class ProfileHeader extends StatelessWidget {
 
   const ProfileHeader(
       {Key? key,
-        required this.coverImage,
-        required this.avatar,
-        required this.title,
-        this.subtitle,
-        this.actions})
+      required this.coverImage,
+      required this.avatar,
+      required this.title,
+      this.subtitle,
+      this.actions})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -133,7 +136,8 @@ class ProfileHeader extends StatelessWidget {
         Ink(
           height: 200,
           decoration: BoxDecoration(
-            image: DecorationImage(image: coverImage as ImageProvider<Object>, fit: BoxFit.cover),
+            image: DecorationImage(
+                image: coverImage as ImageProvider<Object>, fit: BoxFit.cover),
           ),
         ),
         Ink(
@@ -193,11 +197,11 @@ class Avatar extends StatelessWidget {
 
   const Avatar(
       {Key? key,
-        required this.image,
-        this.borderColor = Colors.grey,
-        this.backgroundColor,
-        this.radius = 30,
-        this.borderWidth = 5})
+      required this.image,
+      this.borderColor = Colors.grey,
+      this.backgroundColor,
+      this.radius = 30,
+      this.borderWidth = 5})
       : super(key: key);
 
   @override

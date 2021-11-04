@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFF9EA2A6),
       ),
       // ignore: prefer_const_constructors
-      home: PageParametres(),
-
-    );}
+      home: PageStatistique(),
+    );
+  }
 }
