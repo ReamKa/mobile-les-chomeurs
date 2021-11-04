@@ -1,3 +1,4 @@
+import 'package:chomeurs/Parametres/parametres.dart';
 import 'package:chomeurs/Statistique/statistique_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chomeurs/Orange/body_orange.dart';
@@ -138,7 +139,7 @@ class AnimatedBottomNav extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BodyOrange()),
+                    MaterialPageRoute(builder: (context) => PageParametres()),
                   );
                 },
               ),
