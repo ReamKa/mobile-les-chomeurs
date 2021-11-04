@@ -33,14 +33,18 @@ class MyStateFulWidget extends StatefulWidget {
 class _MyStateFulWidgetState extends State<MyStateFulWidget> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const LogoTop(),
-        Text("ENREGISTREMENTS"),
-        Container(
-          child: Column(
+    return Container(
+      color: const Color(-6380890),
+      child: Column(
+        children: [
+          const LogoTop(),
+          const Text("ENREGISTREMENTS"),
+          const SizedBox(height: 40),
+          Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: Image.asset('assets/Icones/coolicon1.png'),
@@ -50,6 +54,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
                 ],
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: Image.asset('assets/Icones/coolicon1.png'),
@@ -59,6 +64,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
                 ],
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: Image.asset('assets/Icones/coolicon1.png'),
@@ -68,6 +74,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
                 ],
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: Image.asset('assets/Icones/coolicon1.png'),
@@ -77,6 +84,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
                 ],
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: Image.asset('assets/Icones/coolicon1.png'),
@@ -86,6 +94,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
                 ],
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: Image.asset('assets/Icones/coolicon1.png'),
@@ -95,6 +104,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
                 ],
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: Image.asset('assets/Icones/coolicon1.png'),
@@ -104,6 +114,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
                 ],
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: Image.asset('assets/Icones/coolicon1.png'),
@@ -114,8 +125,9 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
               ),
             ],
           ),
-        ),
-      ],
+          Nav(),
+        ],
+      ),
     );
   }
 }
