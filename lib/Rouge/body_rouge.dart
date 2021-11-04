@@ -44,7 +44,6 @@ class _BodyRougeState extends State<BodyRouge> {
             child: Image.asset(
               "assets/images/rectangle.png",
               alignment: Alignment.bottomCenter,
-              height: 100,
             ),
           ),
         ],

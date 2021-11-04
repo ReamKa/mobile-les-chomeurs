@@ -43,7 +43,6 @@ class _BodyVertState extends State<BodyVert> {
             child: Image.asset(
               "assets/images/rectangle.png",
               alignment: Alignment.bottomCenter,
-              height: 100,
             ),
           ),
         ],
