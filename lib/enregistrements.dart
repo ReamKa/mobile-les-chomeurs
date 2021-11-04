@@ -15,14 +15,13 @@ class Enregistrements extends StatelessWidget {
       ),
       home: const Scaffold(
           body: Center(
-            child : MyStateFulWidget(),
-          )
-      ),
+        child: MyStateFulWidget(),
+      )),
     );
   }
 }
 
-class MyStateFulWidget extends StatefulWidget{
+class MyStateFulWidget extends StatefulWidget {
   const MyStateFulWidget({Key? key}) : super(key: key);
 
   @override
@@ -36,7 +35,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          child : Row(
+          child: Row(
             children: [
               IconButton(
                 icon: Image.asset('Icones/coolicon1.png'),

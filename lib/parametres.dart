@@ -17,44 +17,42 @@ class Parametre extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  Scaffold(
+      home: Scaffold(
           body: GridView.count(
-            crossAxisCount: 2,
-            children :  [
+        crossAxisCount: 2,
+        children: [
+          IconButton(
+            icon: Image.asset('Icones/coolicon5.png'),
+            padding: const EdgeInsets.all(10.0),
+            iconSize: 50,
+            onPressed: () {},
+          ),
 
-              IconButton(
-                icon: Image.asset('Icones/coolicon5.png'),
-                padding: const EdgeInsets.all(10.0),
-                iconSize: 50,
-                onPressed: () {},
-              ),
+          //const Text("test"),
+          IconButton(
+            icon: Image.asset('Icones/coolicon6.png'),
+            padding: const EdgeInsets.all(10.0),
+            iconSize: 50,
+            onPressed: () {},
+          ),
 
-              //const Text("test"),
-              IconButton(
-                icon: Image.asset('Icones/coolicon6.png'),
-                padding: const EdgeInsets.all(10.0),
-                iconSize: 50,
-                onPressed: () {},
-              ),
+          //const Text("test2"),
+          IconButton(
+            icon: Image.asset('Icones/coolicon.png'),
+            iconSize: 50,
+            onPressed: () {},
+          ),
 
-              //const Text("test2"),
-              IconButton(
-                icon: Image.asset('Icones/coolicon.png'),
-                iconSize: 50,
-                onPressed: () {},
-              ),
+          //const Text("test3"),
+          IconButton(
+            icon: Image.asset('Icones/coolicon4.png'),
+            iconSize: 50,
+            onPressed: () {},
+          ),
 
-              //const Text("test3"),
-              IconButton(
-                icon: Image.asset('Icones/coolicon4.png'),
-                iconSize: 50,
-                onPressed: () {},
-              ),
-
-              //const Text("test4"),
-            ],
-          )
-      ),
+          //const Text("test4"),
+        ],
+      )),
     );
   }
 }
