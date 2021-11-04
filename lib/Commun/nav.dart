@@ -1,3 +1,4 @@
+import 'package:chomeurs/Statistique/statistique_screen.dart';
 import 'package:flutter/material.dart';
 
 //import 'package:bottom_navigation_bar/home_screen.dart';
@@ -11,7 +12,7 @@ class _NavState extends State<Nav> {
   int _selectedIndex = 0;
   // ignore: prefer_final_fields
   List<Widget> _widgetOptions = <Widget>[
-    //StatistiqueScreen(),
+    StatistiqueScreen(),
     const Text('Save Screen'),
     const Text('Setting Screen'),
   ];
