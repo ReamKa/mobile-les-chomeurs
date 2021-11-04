@@ -1,18 +1,15 @@
-import 'package:chomeurs/Parametres/parametres.dart';
-import 'package:chomeurs/Statistique/statistique_screen.dart';
-import 'package:chomeurs/Statistique/page_statistique.dart';
-
-import 'package:flutter/material.dart';
-import 'package:chomeurs/Vert/body_vert.dart';
+import 'package:chomeurs/Orange/body_orange.dart';
+import 'package:chomeurs/Statistique/body_statitisque.dart';
 import 'package:chomeurs/enregistrements.dart';
+import 'package:flutter/material.dart';
 
-class PageVert extends StatefulWidget {
+class PageStatistique extends StatefulWidget {
   static final String path = "lib/src/pages/animations/anim4.dart";
   @override
-  _PageVertState createState() => _PageVertState();
+  _PageStatistiqueState createState() => _PageStatistiqueState();
 }
 
-class _PageVertState extends State<PageVert> {
+class _PageStatistiqueState extends State<PageStatistique> {
   int? _currentPage;
 
   @override
@@ -29,9 +26,11 @@ class _PageVertState extends State<PageVert> {
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: primaryColor,
+        //toolbarHeight: 120,
         toolbarHeight: 150,
         centerTitle: true,
         elevation: 0,
+        bottomOpacity: 0,
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -39,7 +38,7 @@ class _PageVertState extends State<PageVert> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BodyVert()),
+                  MaterialPageRoute(builder: (context) => BodyStatitisque()),
                 );
               },
               iconSize: 90,
@@ -53,7 +52,7 @@ class _PageVertState extends State<PageVert> {
       //centerTitle: true,
       //toolbarHeight: 120,
       //),
-      body: BodyVert(),
+      body: BodyStatitisque(),
       bottomNavigationBar: AnimatedBottomNav(
           currentIndex: _currentPage,
           onChange: (index) {
@@ -63,6 +62,26 @@ class _PageVertState extends State<PageVert> {
           }),
       //),
     );
+  }
+
+  getPage(int? page) {
+    switch (page) {
+      case 0:
+        return Center(
+            child: Container(
+              child: Text("Blabla"),
+            ));
+      case 1:
+        return Center(
+            child: Container(
+              child: Text("Enregistrements"),
+            ));
+      case 2:
+        return Center(
+            child: Container(
+              child: Text("Profil"),
+            ));
+    }
   }
 }
 
@@ -91,7 +110,7 @@ class AnimatedBottomNav extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => PageStatistique()),
+                        builder: (context) => BodyStatitisque()),
                   );
                 },
               ),
@@ -119,7 +138,7 @@ class AnimatedBottomNav extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PageParametres()),
+                    MaterialPageRoute(builder: (context) => BodyOrange()),
                   );
                 },
               ),
@@ -140,11 +159,11 @@ class BottomNavItem extends StatelessWidget {
   final String? title;
   BottomNavItem(
       {Key? key,
-      this.isActive = false,
-      this.icon,
-      this.activeColor,
-      this.inactiveColor,
-      this.title})
+        this.isActive = false,
+        this.icon,
+        this.activeColor,
+        this.inactiveColor,
+        this.title})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -162,34 +181,34 @@ class BottomNavItem extends StatelessWidget {
       reverseDuration: Duration(milliseconds: 200),
       child: isActive
           ? Container(
-              color: Colors.white,
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    title!,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: activeColor ?? Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    width: 9.0,
-                    height: .0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: activeColor ?? Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ],
+        color: Colors.white,
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              title!,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: activeColor ?? Theme.of(context).primaryColor,
               ),
-            )
-          : Icon(
-              icon,
-              color: inactiveColor ?? primaryColor,
             ),
+            const SizedBox(height: 5.0),
+            Container(
+              width: 9.0,
+              height: .0,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: activeColor ?? Theme.of(context).primaryColor,
+              ),
+            ),
+          ],
+        ),
+      )
+          : Icon(
+        icon,
+        color: inactiveColor ?? primaryColor,
+      ),
     );
   }
 }
