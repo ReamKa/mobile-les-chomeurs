@@ -3,7 +3,7 @@ import 'package:chomeurs/Statistique/page_statistique.dart';
 
 import 'package:flutter/material.dart';
 import 'package:chomeurs/Vert/body_vert.dart';
-import 'package:chomeurs/enregistrements.dart';
+import 'package:chomeurs/Enregistrement/enregistrements.dart';
 
 class PageVert extends StatefulWidget {
   static final String path = "lib/src/pages/animations/anim4.dart";

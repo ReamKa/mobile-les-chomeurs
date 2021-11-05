@@ -1,6 +1,6 @@
 import 'package:chomeurs/Orange/body_orange.dart';
 import 'package:chomeurs/Statistique/body_statitisque.dart';
-import 'package:chomeurs/enregistrements.dart';
+import 'package:chomeurs/Enregistrement/enregistrements.dart';
 import 'package:flutter/material.dart';
 
 class PageStatistique extends StatefulWidget {

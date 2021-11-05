@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './Commun/logo_top.dart';
-import './Commun/nav.dart';
+import '../Commun/logo_top.dart';
+import '../Commun/nav.dart';
 
 void main() => runApp(const Enregistrements());
 
@@ -10,7 +10,7 @@ class Enregistrements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter',
+      title: 'Enregistrements',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
