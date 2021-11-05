@@ -1,4 +1,5 @@
 import 'package:chomeurs/Statistique/page_statistique.dart';
+import 'package:chomeurs/Enregistrement/enregistrements.dart';
 import 'package:flutter/material.dart';
 import './route3.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFF9EA2A6),
       ),
       // ignore: prefer_const_constructors
-      home: PageStatistique(),
+      home: Enregistrements(),
     );
   }
 }

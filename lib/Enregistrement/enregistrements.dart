@@ -1,15 +1,37 @@
-import 'package:chomeurs/Orange/body_orange.dart';
-import 'package:chomeurs/Statistique/body_statitisque.dart';
-import 'package:chomeurs/Enregistrement/enregistrements.dart';
+import 'package:chomeurs/Enregistrement/body_enregistrement.dart';
 import 'package:flutter/material.dart';
+import '../Commun/logo_top.dart';
+import '../Commun/nav.dart';
 
-class PageStatistique extends StatefulWidget {
-  static final String path = "lib/src/pages/animations/anim4.dart";
+void main() => runApp(const Enregistrements());
+
+class Enregistrements extends StatelessWidget {
+  const Enregistrements({Key? key}) : super(key: key);
+
   @override
-  _PageStatistiqueState createState() => _PageStatistiqueState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Scaffold(
+          body: Center(
+            child: MyStateFulWidget(),
+          )),
+    );
+  }
 }
 
-class _PageStatistiqueState extends State<PageStatistique> {
+class MyStateFulWidget extends StatefulWidget {
+  const MyStateFulWidget({Key? key}) : super(key: key);
+
+  @override
+  _MyStateFulWidgetState createState() => _MyStateFulWidgetState();
+}
+
+class _MyStateFulWidgetState extends State<MyStateFulWidget> {
   int? _currentPage;
 
   @override
@@ -38,7 +60,8 @@ class _PageStatistiqueState extends State<PageStatistique> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BodyStatitisque()),
+                  // ignore: prefer_const_constructors
+                  MaterialPageRoute(builder: (context) => Enregistrements()),
                 );
               },
               iconSize: 90,
@@ -49,10 +72,12 @@ class _PageStatistiqueState extends State<PageStatistique> {
           ],
         ),
       ),
-      //centerTitle: true,
-      //toolbarHeight: 120,
-      //),
-      body: BodyStatitisque(),
+      body: Column(
+          children : <Widget>[
+          const Text("ENREGISTREMENTS"),
+            BodyEnregistrement()
+          ],
+      ),
       bottomNavigationBar: AnimatedBottomNav(
           currentIndex: _currentPage,
           onChange: (index) {
@@ -60,27 +85,25 @@ class _PageStatistiqueState extends State<PageStatistique> {
               _currentPage = index;
             });
           }),
-      //),
     );
   }
-
   getPage(int? page) {
     switch (page) {
       case 0:
         return Center(
             child: Container(
-          child: Text("Blabla"),
-        ));
+              child: Text("Blabla"),
+            ));
       case 1:
         return Center(
             child: Container(
-          child: Text("Enregistrements"),
-        ));
+              child: Text("Enregistrements"),
+            ));
       case 2:
         return Center(
             child: Container(
-          child: Text("Profil"),
-        ));
+              child: Text("Profil"),
+            ));
     }
   }
 }
@@ -133,7 +156,7 @@ class AnimatedBottomNav extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BodyOrange()),
+                    MaterialPageRoute(builder: (context) => Enregistrements()),
                   );
                 },
               ),
@@ -154,11 +177,11 @@ class BottomNavItem extends StatelessWidget {
   final String? title;
   BottomNavItem(
       {Key? key,
-      this.isActive = false,
-      this.icon,
-      this.activeColor,
-      this.inactiveColor,
-      this.title})
+        this.isActive = false,
+        this.icon,
+        this.activeColor,
+        this.inactiveColor,
+        this.title})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -176,34 +199,34 @@ class BottomNavItem extends StatelessWidget {
       reverseDuration: Duration(milliseconds: 200),
       child: isActive
           ? Container(
-              color: Colors.white,
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    title!,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: activeColor ?? Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 5.0),
-                  Container(
-                    width: 9.0,
-                    height: .0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: activeColor ?? Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ],
+        color: Colors.white,
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              title!,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: activeColor ?? Theme.of(context).primaryColor,
               ),
-            )
-          : Icon(
-              icon,
-              color: inactiveColor ?? primaryColor,
             ),
+            const SizedBox(height: 5.0),
+            Container(
+              width: 9.0,
+              height: .0,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: activeColor ?? Theme.of(context).primaryColor,
+              ),
+            ),
+          ],
+        ),
+      )
+          : Icon(
+        icon,
+        color: inactiveColor ?? primaryColor,
+      ),
     );
   }
 }
