@@ -22,7 +22,7 @@ class _AccueilEnregistrementState extends State<AccueilEnregistrement> {
               colors: [Color.fromRGBO(59, 72, 92, 100), 
                 Color.fromRGBO(233, 232, 212, 100)])),
       child: Scaffold(
-          backgroundColor: primaryColor,
+          backgroundColor: Colors.transparent,
           body: Center(
             child: IconButton(
               icon:Image.asset("assets/images/reverb.png",),
