@@ -13,98 +13,104 @@ class _BodyEnregistrementState extends State<BodyEnregistrement> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SizedBox(
-        width: size.width,
-        child: Stack (
-          alignment: Alignment.center,
-          children: <Widget>[
-            const SizedBox(height: 40),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Image.asset('assets/Icones/coolicon1.png'),
-                      onPressed: () {},
-                    ),
-                    const Text("rec08.mp3"),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Image.asset('assets/Icones/coolicon1.png'),
-                      onPressed: () {},
-                    ),
-                    const Text("rec07.mp3"),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Image.asset('assets/Icones/coolicon1.png'),
-                      onPressed: () {},
-                    ),
-                    const Text("rec06.mp3"),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Image.asset('assets/Icones/coolicon1.png'),
-                      onPressed: () {},
-                    ),
-                    const Text("rec05.mp3"),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Image.asset('assets/Icones/coolicon1.png'),
-                      onPressed: () {},
-                    ),
-                    const Text("rec04.mp3"),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Image.asset('assets/Icones/coolicon1.png'),
-                      onPressed: () {},
-                    ),
-                    const Text("rec03.mp3"),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Image.asset('assets/Icones/coolicon1.png'),
-                      onPressed: () {},
-                    ),
-                    const Text("rec02.mp3"),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Image.asset('assets/Icones/coolicon1.png'),
-                      onPressed: () {},
-                    ),
-                    const Text("rec01.mp3"),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
+      width: size.width,
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          const SizedBox(height: 40),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Image.asset('assets/Icones/coolicon1.png'),
+                    onPressed: () {},
+                  ),
+                  const Text("rec08.mp3"),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Image.asset('assets/Icones/coolicon1.png'),
+                    onPressed: () {},
+                  ),
+                  const Text("rec07.mp3"),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Image.asset('assets/Icones/coolicon1.png'),
+                    onPressed: () {},
+                  ),
+                  const Text("rec06.mp3"),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Image.asset('assets/Icones/coolicon1.png'),
+                    onPressed: () {},
+                  ),
+                  const Text("rec05.mp3"),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Image.asset('assets/Icones/coolicon1.png'),
+                    onPressed: () {},
+                  ),
+                  const Text("rec04.mp3"),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Image.asset('assets/Icones/coolicon1.png'),
+                    onPressed: () {},
+                  ),
+                  const Text("rec03.mp3"),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Image.asset('assets/Icones/coolicon1.png'),
+                    onPressed: () {},
+                  ),
+                  const Text("rec02.mp3"),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Image.asset('assets/Icones/coolicon1.png'),
+                    onPressed: () {},
+                  ),
+                  const Text("rec01.mp3"),
+                ],
+              ),
+                  /*IconButton(
+                    icon: Image.asset('assets/images/rectangle.png'),
+                    onPressed: () {},
+                    alignment: Alignment.bottomCenter,
+
+                  ),*/
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

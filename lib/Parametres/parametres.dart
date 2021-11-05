@@ -1,7 +1,9 @@
+import 'package:chomeurs/Accueil/accueil.dart';
 import 'package:chomeurs/Statistique/page_statistique.dart';
 import 'package:flutter/material.dart';
 import 'package:chomeurs/Parametres/body_parametres.dart';
 import 'package:chomeurs/Enregistrement/enregistrements.dart';
+
 class PageParametres extends StatefulWidget {
   static final String path = "lib/src/pages/animations/anim4.dart";
   @override
@@ -37,7 +39,7 @@ class _PageParametresState extends State<PageParametres> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BodyParametres()),
+                  MaterialPageRoute(builder: (context) => Accueil()),
                 );
               },
               iconSize: 90,
@@ -136,8 +138,7 @@ class AnimatedBottomNav extends StatelessWidget {
               child: IconButton(
                 iconSize: 48,
                 icon: Image.asset("assets/Icones/parametre.png"),
-                onPressed: () {
-                },
+                onPressed: () {},
               ),
             ),
           ),

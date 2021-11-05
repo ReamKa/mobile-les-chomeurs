@@ -1,3 +1,4 @@
+import 'package:chomeurs/Accueil/acceuil_enregistrement.dart';
 import 'package:noise_meter/noise_meter.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -62,6 +63,7 @@ class _NoiseListenState extends State<NoiseListen> {
 
   List<Widget> getContent() => <Widget>[
         Container(
+          color: primaryColor,
             margin: EdgeInsets.all(25),
             child: Column(children: [
               Container(
@@ -71,21 +73,19 @@ class _NoiseListenState extends State<NoiseListen> {
               )
             ])),
       ];
+  Color primaryColor = Color(0xFF9EA2A6);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    debugShowCheckedModeBanner: false,
-
-    home: Scaffold(
-        body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: getContent())),
-        floatingActionButton: FloatingActionButton(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: primaryColor,
+        body: AccueilEnregistrement(),
+        /*floatingActionButton: FloatingActionButton(
             backgroundColor: _isRecording ? Colors.red : Colors.green,
             onPressed: _isRecording ? stop : start,
-            child: _isRecording ? Icon(Icons.stop) : Icon(Icons.mic)),
+            child: _isRecording ? Icon(Icons.stop) : Icon(Icons.mic)),*/
       ),
     );
   }

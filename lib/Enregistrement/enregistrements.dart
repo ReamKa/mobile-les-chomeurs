@@ -1,4 +1,7 @@
+import 'package:chomeurs/Accueil/accueil.dart';
 import 'package:chomeurs/Enregistrement/body_enregistrement.dart';
+import 'package:chomeurs/Parametres/parametres.dart';
+import 'package:chomeurs/Statistique/page_statistique.dart';
 import 'package:flutter/material.dart';
 import '../Commun/logo_top.dart';
 import '../Commun/nav.dart';
@@ -11,7 +14,7 @@ class Enregistrements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter',
+      title: 'Enregistrements',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -57,11 +60,10 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             IconButton(
-              onPressed: () {
+              onPressed: (){
                 Navigator.push(
                   context,
-// ignore: prefer_const_constructors
-                  MaterialPageRoute(builder: (context) => Enregistrements()),
+                  MaterialPageRoute(builder: (context) => Accueil()),
                 );
               },
               iconSize: 90,
@@ -73,7 +75,15 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
         ),
       ),
       body: Column(
-        children: <Widget>[const Text("ENREGISTREMENTS"), BodyEnregistrement()],
+        children: <Widget>[const Text("ENREGISTREMENTS",
+        style: TextStyle(
+          fontSize: 40,
+          fontFamily: "Inter",
+          fontStyle: FontStyle.italic,
+          fontWeight: FontWeight.normal,
+          color: Color.fromRGBO(59, 66, 92, 100),
+        ),
+        ), BodyEnregistrement()],
       ),
       bottomNavigationBar: AnimatedBottomNav(
           currentIndex: _currentPage,
@@ -127,7 +137,12 @@ class AnimatedBottomNav extends StatelessWidget {
               child: IconButton(
                 iconSize: 48,
                 icon: Image.asset("assets/Icones/coolicon3.png"),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageStatistique()),
+                  );
+                },
               ),
             ),
           ),
@@ -137,10 +152,6 @@ class AnimatedBottomNav extends StatelessWidget {
                 iconSize: 48,
                 icon: Image.asset("assets/Icones/Save_fill.png"),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Enregistrements()),
-                  );
                 },
               ),
             ),
@@ -153,7 +164,7 @@ class AnimatedBottomNav extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Enregistrements()),
+                    MaterialPageRoute(builder: (context) => PageParametres()),
                   );
                 },
               ),

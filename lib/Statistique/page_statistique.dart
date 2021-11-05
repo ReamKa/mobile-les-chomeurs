@@ -1,4 +1,6 @@
+import 'package:chomeurs/Accueil/accueil.dart';
 import 'package:chomeurs/Orange/body_orange.dart';
+import 'package:chomeurs/Parametres/parametres.dart';
 import 'package:chomeurs/Statistique/body_statitisque.dart';
 import 'package:chomeurs/Enregistrement/enregistrements.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +40,7 @@ class _PageStatistiqueState extends State<PageStatistique> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BodyStatitisque()),
+                  MaterialPageRoute(builder: (context) => Accueil()),
                 );
               },
               iconSize: 90,
@@ -106,8 +108,7 @@ class AnimatedBottomNav extends StatelessWidget {
               child: IconButton(
                 iconSize: 48,
                 icon: Image.asset("assets/Icones/coolicon3.png"),
-                onPressed: () {
-                },
+                onPressed: () {},
               ),
             ),
           ),
@@ -133,7 +134,7 @@ class AnimatedBottomNav extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BodyOrange()),
+                    MaterialPageRoute(builder: (context) => PageParametres()),
                   );
                 },
               ),

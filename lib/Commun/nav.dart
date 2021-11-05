@@ -48,23 +48,24 @@ class _NavState extends State<Nav> {
           }),
     );
   }
+
   getPage(int? page) {
     switch (page) {
       case 0:
         return Center(
             child: Container(
-              child: Text("Blabla"),
-            ));
+          child: Text("Blabla"),
+        ));
       case 1:
         return Center(
             child: Container(
-              child: Text("Enregistrements"),
-            ));
+          child: Text("Enregistrements"),
+        ));
       case 2:
         return Center(
             child: Container(
-              child: Text("Profil"),
-            ));
+          child: Text("Profil"),
+        ));
     }
   }
 }
@@ -90,8 +91,7 @@ class AnimatedBottomNav extends StatelessWidget {
               child: IconButton(
                 iconSize: 48,
                 icon: Image.asset("assets/Icones/coolicon3.png"),
-                onPressed: () {
-                },
+                onPressed: () {},
               ),
             ),
           ),
@@ -138,11 +138,11 @@ class BottomNavItem extends StatelessWidget {
   final String? title;
   BottomNavItem(
       {Key? key,
-        this.isActive = false,
-        this.icon,
-        this.activeColor,
-        this.inactiveColor,
-        this.title})
+      this.isActive = false,
+      this.icon,
+      this.activeColor,
+      this.inactiveColor,
+      this.title})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -160,34 +160,34 @@ class BottomNavItem extends StatelessWidget {
       reverseDuration: Duration(milliseconds: 200),
       child: isActive
           ? Container(
-        color: Colors.white,
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              title!,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: activeColor ?? Theme.of(context).primaryColor,
+              color: Colors.white,
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    title!,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: activeColor ?? Theme.of(context).primaryColor,
+                    ),
+                  ),
+                  const SizedBox(height: 5.0),
+                  Container(
+                    width: 9.0,
+                    height: .0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: activeColor ?? Theme.of(context).primaryColor,
+                    ),
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(height: 5.0),
-            Container(
-              width: 9.0,
-              height: .0,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: activeColor ?? Theme.of(context).primaryColor,
-              ),
-            ),
-          ],
-        ),
-      )
+            )
           : Icon(
-        icon,
-        color: inactiveColor ?? primaryColor,
-      ),
+              icon,
+              color: inactiveColor ?? primaryColor,
+            ),
     );
   }
 }

@@ -7,12 +7,14 @@ class BodyStatitisque extends StatefulWidget {
   @override
   _BodyStatitisqueState createState() => _BodyStatitisqueState();
 }
+Color primaryColor = Color(0xFF9EA2A6);
 
 class _BodyStatitisqueState extends State<BodyStatitisque> {
   List<int> valueHistories = <int>[12, 13, 15, 123, 147];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primaryColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

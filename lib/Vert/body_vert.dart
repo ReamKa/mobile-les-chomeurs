@@ -6,12 +6,14 @@ class BodyVert extends StatefulWidget {
   @override
   _BodyVertState createState() => _BodyVertState();
 }
+Color primaryColor = Color(0xFF9EA2A6);
 
 class _BodyVertState extends State<BodyVert> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      backgroundColor: primaryColor,
+    body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
