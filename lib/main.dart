@@ -26,11 +26,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFF9EA2A6),
       ),
       // ignore: prefer_const_constructors
-<<<<<<< HEAD
       home: Enregistrements(),
-=======
-      home: NoiseListen(),
->>>>>>> 1d9dde9652ba4d16507ce3b40c0604507d5a5f1f
     );
   }
 }
