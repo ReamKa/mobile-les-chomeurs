@@ -2,12 +2,12 @@ import 'package:noise_meter/noise_meter.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class MyApp extends StatefulWidget {
+class NoiseListen extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _NoiseListenState createState() => new _NoiseListenState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _NoiseListenState extends State<NoiseListen> {
   bool _isRecording = false;
   StreamSubscription<NoiseReading>? _noiseSubscription;
   late NoiseMeter _noiseMeter;
@@ -65,7 +65,7 @@ class _MyAppState extends State<MyApp> {
             margin: EdgeInsets.all(25),
             child: Column(children: [
               Container(
-                child: Text(_isRecording ? "Mic: ON" : "Mic: OFF",
+                child: Text(_isRecording ? "Microphone: ON" : "Microphone: OFF",
                     style: TextStyle(fontSize: 25, color: Colors.blue)),
                 margin: EdgeInsets.only(top: 20),
               )
@@ -75,7 +75,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+    debugShowCheckedModeBanner: false,
+
+    home: Scaffold(
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

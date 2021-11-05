@@ -1,8 +1,8 @@
 import 'package:chomeurs/Statistique/page_statistique.dart';
 import 'package:flutter/material.dart';
 import 'package:chomeurs/Parametres/body_parametres.dart';
+<<<<<<< HEAD
 import 'package:chomeurs/Enregistrement/enregistrements.dart';
-
 class PageParametres extends StatefulWidget {
   static final String path = "lib/src/pages/animations/anim4.dart";
   @override
