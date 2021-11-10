@@ -27,6 +27,7 @@ class MyStateFulWidget extends StatefulWidget {
   const MyStateFulWidget({Key? key}) : super(key: key);
 
   @override
+<<<<<<< Updated upstream:lib/enregistrements.dart
   _MyStateFulWidgetState createState() => _MyStateFulWidgetState();
 }
 
@@ -127,6 +128,145 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
           ),
           Nav(),
         ],
+=======
+  _BodyEnregistrement createState() => _BodyEnregistrement();
+}
+
+
+class _BodyEnregistrement extends State<BodyEnregistrement> {
+  Color primaryColor = Color(0xFF9EA2A6);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        backgroundColor: primaryColor,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("ENREGISTREMENTS"),
+          centerTitle: true,
+          titleTextStyle: const TextStyle(
+              fontFamily: "Inter",
+              fontStyle: FontStyle.italic,
+              fontSize: 40,
+              color: Color.fromRGBO(59, 66, 92, 100)),
+          backgroundColor: primaryColor,
+          elevation: 0,
+          bottomOpacity: 0,
+        ),
+        backgroundColor: primaryColor,
+        body: Container(
+          alignment: Alignment.topCenter,
+           child: Column(
+
+             children: [
+               Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   IconButton(
+                     icon: Image.asset('assets/Icones/coolicon1.png'),
+                     onPressed: () {},
+                   ),
+                   const Text("rec08.mp3"),
+                 ],
+               ),
+
+
+               Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   IconButton(
+                     icon: Image.asset('assets/Icones/coolicon1.png'),
+                     onPressed: () {},
+                   ),
+                   const Text("rec07.mp3"),
+                 ],
+               ),
+
+
+               Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   IconButton(
+                     icon: Image.asset('assets/Icones/coolicon1.png'),
+                     onPressed: () {},
+                   ),
+                   const Text("rec06.mp3"),
+                 ],
+               ),
+
+
+               Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   IconButton(
+                     icon: Image.asset('assets/Icones/coolicon1.png'),
+                     onPressed: () {},
+                   ),
+                   const Text("rec05.mp3"),
+                 ],
+               ),
+
+
+               Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   IconButton(
+                     icon: Image.asset('assets/Icones/coolicon1.png'),
+                     onPressed: () {},
+                   ),
+                   const Text("rec04.mp3"),
+                 ],
+               ),
+
+
+               Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   IconButton(
+                     icon: Image.asset('assets/Icones/coolicon1.png'),
+                     onPressed: () {},
+                   ),
+                   const Text("rec03.mp3"),
+                 ],
+               ),
+
+
+               Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   IconButton(
+                     icon: Image.asset('assets/Icones/coolicon1.png'),
+                     onPressed: () {},
+                   ),
+                   const Text("rec02.mp3"),
+                 ],
+               ),
+
+
+               Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   IconButton(
+                     icon: Image.asset('assets/Icones/coolicon1.png'),
+                     onPressed: () {},
+                   ),
+                   const Text("rec01.mp3"),
+                 ],
+               ),
+
+             ],
+            ),
+
+        ),
+        bottomNavigationBar: Image.asset(
+          "assets/images/rectangle.png",
+          alignment: Alignment.bottomCenter,
+          height: 100,
+        ),
+>>>>>>> Stashed changes:lib/Enregistrement/body_enregistrement.dart
       ),
     );
   }
