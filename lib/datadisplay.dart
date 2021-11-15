@@ -28,40 +28,40 @@ SoundDescription (dB) {
     comment = "ooooh, " + dB + "Décibels ? On entendrait le bruissement des feuilles...";
   }
   else if (dB < 30) {
-    comment = "Ah, " + dB + "Décibels ? C'est comme se ballader dans un voisinage rurale plutôt calme !";
+    comment = "Ah, " + dB + "Décibels ? C'est comme se ballader dans un voisinage rurale plutôt calme.";
   }
   else if (dB < 40) {
-    comment = "C'est sympa " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "C'est sympa " + dB + "Décibels ? C'est comme les chants des oiseaux !";
   }
   else if (dB < 50) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "hmm, " + dB + "Décibels ? Parler dans son appartement est aussi fort.";
   }
   else if (dB < 60) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "Eeeh " + dB + "Décibels ? On dirait des bureaux bruillants";
   }
   else if (dB < 70) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "Ahrr, " + dB + "Décibels ? Un bruit d'aspirateur peut déranger certaines personnes.";
   }
   else if (dB < 80) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "Ouah " + dB + "Décibels ? Le mixeur peut faire beaucoup de bruit.";
   }
   else if (dB < 90) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "Ah, " + dB + "Décibels ? C'est comme une tondeuse électrique.";
   }
   else if (dB < 100) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "Oh la, " + dB + "Décibels ? Une exposition prolongé d'un bruit de marteau-piqueur peut endommager votre ouïe.";
   }
   else if (dB < 110) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "Ouah " + dB + "Décibels ? On dirait un concert de rock!";
   }
   else if (dB < 120) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "Euh " + dB + "Décibels ? Ca va ? C'était un coups de foudre ?";
   }
   else if (dB < 130) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "... " + dB + "Décibels ? Vous êtes à 20 mètre d'un avion militaire au décolage ?";
   }
   else if (dB < 140) {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "Hmmm, " + dB + "Décibels ? Vous êtes sur un pont de porte avion ? J'espère que vous avez le droit d'y être. ";
   }
   else {
     comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
