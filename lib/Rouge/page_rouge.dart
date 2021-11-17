@@ -19,7 +19,6 @@ class _PageRougeState extends State<PageRouge> {
     _currentPage = 0;
     super.initState();
   }
-//jbgubmjbluihjn
 
   Color primaryColor = Color(0xFF9EA2A6);
 
