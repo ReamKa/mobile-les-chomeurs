@@ -72,7 +72,7 @@ class _NoiseListenState extends State<NoiseListen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    throw ErrorDescription("toto");
   }
 
 }
