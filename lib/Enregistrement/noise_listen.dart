@@ -70,5 +70,7 @@ class _NoiseListenState extends State<NoiseListen> {
   }
   
   @override
-  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
-}
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
