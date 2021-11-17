@@ -24,7 +24,7 @@ class _AccueilState extends State<Accueil> {
           },
           iconSize: 180,
           icon: Image.asset(
-            "assets/images/logo.PNG",
+            "assets/images/logo.png",
           ),
         ),
       ),

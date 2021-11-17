@@ -21,7 +21,7 @@ class ThirdRoute extends StatelessWidget {
 
   }
 }
-
+double? valeur=getValue;
 SoundDescription (dB) {
   var comment = "comment";
   String dBstring = dB.toStringAsFixed(1);
@@ -73,18 +73,22 @@ SoundDescription (dB) {
   return comment;
 }
 
-PageDirection (dB) {
+PageDirection () {
   var page;
-  if (dB < 70) {
-    page = PageVert();
+  if (valeur != null) {
+    if (valeur! < 70) {
+      page = PageVert();
+    }
+    else if (valeur! < 90) {
+      page = PageOrange();
+    }
+    else {
+      page = PageRouge();
+    }
   }
-  else if (dB < 90) {
-    page = PageOrange();
+   else {
+     var comment = "merde";
   }
-  else {
-    page = PageRouge();
-  }
-
   return page;
 }
 
@@ -93,10 +97,11 @@ class PageOrg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dbValue = getValue;
-    String dbValueAsString = getValue!.toStringAsFixed(1);
+    var dbValue = 12.0;
+    String dbValueAsString = valeur!.toStringAsFixed(1);
     var pointerColor;
-    if (dbValue! < 70) {
+if (dbValue != null) {
+    if (dbValue ! < 70) {
       pointerColor = Colors.green;
     }
     else if (dbValue <= 90) {
@@ -105,6 +110,9 @@ class PageOrg extends StatelessWidget {
     else {
       pointerColor = Colors.red;
     }
+  } else {
+   var comment = "merde";
+  }
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -132,7 +140,7 @@ class PageOrg extends StatelessWidget {
     ],
     ))
         ),
-        SoundDisplay(),
+        //SoundDisplay(),
         ButtonApres(),
       ],
     );
@@ -143,7 +151,7 @@ class SoundDisplay extends StatelessWidget {
   const SoundDisplay({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    String getSoundLevel = SoundDescription(getValue);
+    String getSoundLevel = SoundDescription(12.0);
     var displaySound = Text(getSoundLevel);
     return Container(child: displaySound);
   }
@@ -177,7 +185,7 @@ class ButtonApres extends StatelessWidget {
             style: style,
             onPressed: () {Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>  PageDirection (getValue)),
+              MaterialPageRoute(builder: (context) =>  PageDirection ()),
             );
             },
             child: const Text('Et après ?'),
