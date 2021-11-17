@@ -68,8 +68,7 @@ class _NoiseListenState extends State<NoiseListen> {
   double? getMeanDB(){
     return getValue;
   }
-
-
+  
   @override
   noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
