@@ -93,10 +93,10 @@ class PageOrg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dbValue = 144.0;
-    String dbValueAsString = dbValue.toStringAsFixed(1);
+    var dbValue = getValue;
+    String dbValueAsString = getValue!.toStringAsFixed(1);
     var pointerColor;
-    if (dbValue < 70) {
+    if (dbValue! < 70) {
       pointerColor = Colors.green;
     }
     else if (dbValue <= 90) {
@@ -109,6 +109,7 @@ class PageOrg extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         LogoSmall(),
+
         Center(
         child: Container(
         child: SfRadialGauge(
@@ -140,10 +141,9 @@ class PageOrg extends StatelessWidget {
 
 class SoundDisplay extends StatelessWidget {
   const SoundDisplay({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    String getSoundLevel = SoundDescription(144);
+    String getSoundLevel = SoundDescription(getValue);
     var displaySound = Text(getSoundLevel);
     return Container(child: displaySound);
   }
@@ -177,7 +177,7 @@ class ButtonApres extends StatelessWidget {
             style: style,
             onPressed: () {Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>  PageDirection (144)),
+              MaterialPageRoute(builder: (context) =>  PageDirection (getValue)),
             );
             },
             child: const Text('Et après ?'),
