@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import './Enregistrement/noise_listen.dart';
+import 'Orange/page_resultat_orange.dart';
+import 'Vert/page_resultat_vert.dart';
+import 'Rouge/page_rouge.dart';
 
 
 class ThirdRoute extends StatelessWidget {
@@ -10,8 +13,8 @@ class ThirdRoute extends StatelessWidget {
   @override
 
     Widget build(BuildContext context) {
-    
     return const Scaffold(
+      backgroundColor: Color(0xFF9EA2A6),
       body: PageOrg(),
       );
     
@@ -21,54 +24,68 @@ class ThirdRoute extends StatelessWidget {
 
 SoundDescription (dB) {
   var comment = "comment";
+  String dBstring = dB.toStringAsFixed(1);
   if (dB < 10) {
-    comment = "hmmm, " + dB + "Décibels ? C'est à peine le bruit d'une respiration...";
+    comment = "hmmm, " + dBstring + " Décibels ? C'est à peine le bruit d'une respiration...";
   }
   else if (dB < 20) {
-    comment = "ooooh, " + dB + "Décibels ? On entendrait le bruissement des feuilles...";
+    comment = "ooooh, " + dBstring + " Décibels ? On entendrait le bruissement des feuilles...";
   }
   else if (dB < 30) {
-    comment = "Ah, " + dB + "Décibels ? C'est comme se ballader dans un voisinage rurale plutôt calme.";
+    comment = "Ah, " + dBstring + " Décibels ? C'est comme se ballader dans un voisinage rurale plutôt calme.";
   }
   else if (dB < 40) {
-    comment = "C'est sympa " + dB + "Décibels ? C'est comme les chants des oiseaux !";
+    comment = "C'est sympa " + dBstring + " Décibels ? C'est comme les chants des oiseaux !";
   }
   else if (dB < 50) {
-    comment = "hmm, " + dB + "Décibels ? Parler dans son appartement est aussi fort.";
+    comment = "hmm, " + dBstring + " Décibels ? Parler dans son appartement est aussi fort.";
   }
   else if (dB < 60) {
-    comment = "Eeeh " + dB + "Décibels ? On dirait des bureaux bruillants";
+    comment = "Eeeh " + dBstring + " Décibels ? On dirait des bureaux bruillants";
   }
   else if (dB < 70) {
-    comment = "Ahrr, " + dB + "Décibels ? Un bruit d'aspirateur peut déranger certaines personnes.";
+    comment = "Ahrr, " + dBstring + " Décibels ? Un bruit d'aspirateur peut déranger certaines personnes.";
   }
   else if (dB < 80) {
-    comment = "Ouah " + dB + "Décibels ? Le mixeur peut faire beaucoup de bruit.";
+    comment = "Ouah " + dBstring + " Décibels ? Le mixeur peut faire beaucoup de bruit.";
   }
   else if (dB < 90) {
-    comment = "Ah, " + dB + "Décibels ? C'est comme une tondeuse électrique.";
+    comment = "Ah, " + dBstring + " Décibels ? C'est comme une tondeuse électrique.";
   }
   else if (dB < 100) {
-    comment = "Oh la, " + dB + "Décibels ? Une exposition prolongé d'un bruit de marteau-piqueur peut endommager votre ouïe.";
+    comment = "Oh la, " + dBstring + " Décibels ? Une exposition prolongé d'un bruit de marteau-piqueur peut endommager votre ouïe.";
   }
   else if (dB < 110) {
-    comment = "Ouah " + dB + "Décibels ? On dirait un concert de rock!";
+    comment = "Ouah " + dBstring + " Décibels ? On dirait un concert de rock!";
   }
   else if (dB < 120) {
-    comment = "Euh " + dB + "Décibels ? Ca va ? C'était un coups de foudre ?";
+    comment = "Euh " + dBstring + " Décibels ? Ca va ? C'était un coups de foudre ?";
   }
   else if (dB < 130) {
-    comment = "... " + dB + "Décibels ? Vous êtes à 20 mètre d'un avion militaire au décolage ?";
+    comment = "... " + dBstring + " Décibels ? Vous êtes à 20 mètre d'un avion militaire au décolage ?";
   }
   else if (dB < 140) {
-    comment = "Hmmm, " + dB + "Décibels ? Vous êtes sur un pont de porte avion ? J'espère que vous avez le droit d'y être. ";
+    comment = "Hmmm, " + dBstring + " Décibels ? Vous êtes sur un pont de porte avion ? J'espère que vous avez le droit d'y être. ";
   }
   else {
-    comment = "Ouah " + dB + "Décibels ? C'est à peine le bruit d'une respiration !";
+    comment = "..." + dBstring + " Décibels ? Vos tympans sont toujours là ?";
+  }
+  return comment;
+}
+
+PageDirection (dB) {
+  var page;
+  if (dB < 70) {
+    page = PageVert();
+  }
+  else if (dB < 90) {
+    page = PageOrange();
+  }
+  else {
+    page = PageRouge();
   }
 
-
-  return comment;
+  return page;
 }
 
 class PageOrg extends StatelessWidget {
@@ -76,7 +93,7 @@ class PageOrg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dbValue = 122.0;
+    var dbValue = 144.0;
     String dbValueAsString = dbValue.toStringAsFixed(1);
     var pointerColor;
     if (dbValue < 70) {
@@ -92,7 +109,6 @@ class PageOrg extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         LogoSmall(),
-        SoundDisplay(),
         Center(
         child: Container(
         child: SfRadialGauge(
@@ -115,6 +131,7 @@ class PageOrg extends StatelessWidget {
     ],
     ))
         ),
+        SoundDisplay(),
         ButtonApres(),
       ],
     );
@@ -126,7 +143,7 @@ class SoundDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String getSoundLevel = "placeholder";
+    String getSoundLevel = SoundDescription(144);
     var displaySound = Text(getSoundLevel);
     return Container(child: displaySound);
   }
@@ -137,7 +154,7 @@ class LogoSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var assetImage = const AssetImage('assets/images/image2.png');
+    var assetImage = const AssetImage('assets/Icones/image 2.png');
     var image = Image(image: assetImage, width: 110, height: 69);
     return Container(child: image);
   }
@@ -145,10 +162,11 @@ class LogoSmall extends StatelessWidget {
 
 class ButtonApres extends StatelessWidget {
   const ButtonApres({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20), primary: Color(0xFFC2C4B9),padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 14.0));
 
     return Center(
       child: Column(
@@ -157,7 +175,11 @@ class ButtonApres extends StatelessWidget {
           const SizedBox(width: 110, height: 56),
           ElevatedButton(
             style: style,
-            onPressed: () {},
+            onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) =>  PageDirection (144)),
+            );
+            },
             child: const Text('Et après ?'),
           ),
         ],

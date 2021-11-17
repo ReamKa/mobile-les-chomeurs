@@ -6,11 +6,12 @@ class BodyRouge extends StatefulWidget {
   @override
   _BodyRougeState createState() => _BodyRougeState();
 }
-
+Color primarycolor = Color(0xFF9EA2A6);
 class _BodyRougeState extends State<BodyRouge> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primarycolor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

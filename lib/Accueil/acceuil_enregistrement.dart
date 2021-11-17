@@ -3,6 +3,7 @@ import 'package:chomeurs/Enregistrement/noise_listen.dart';
 import 'package:chomeurs/Orange/page_resultat_orange.dart';
 import 'package:chomeurs/Vert/page_resultat_vert.dart';
 import 'package:flutter/material.dart';
+import 'package:chomeurs/datadisplay.dart';
 
 
 class AccueilEnregistrement extends StatefulWidget {
@@ -31,7 +32,7 @@ class _AccueilEnregistrementState extends State<AccueilEnregistrement> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  PageOrange()),
+                  MaterialPageRoute(builder: (context) =>  ThirdRoute()),
                 );
               },
             ),
