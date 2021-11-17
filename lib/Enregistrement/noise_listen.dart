@@ -69,10 +69,7 @@ class _NoiseListenState extends State<NoiseListen> {
     return getValue;
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw ErrorDescription("toto");
-  }
 
+  @override
+  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
