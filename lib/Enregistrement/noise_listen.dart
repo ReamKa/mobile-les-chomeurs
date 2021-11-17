@@ -69,14 +69,7 @@ class _NoiseListenState extends State<NoiseListen> {
     return getValue;
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
-    return Scaffold(
-      body: ThirdRoute(),
-    );
-    // TODO: implement build
-    throw UnimplementedError();
-  }
 
+  @override
+  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
