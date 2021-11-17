@@ -1,92 +1,82 @@
-import 'package:chomeurs/Accueil/acceuil_enregistrement.dart';
-import 'package:noise_meter/noise_meter.dart';
-import 'package:flutter/material.dart';
+// https://github.com/syncfusion/flutter-examples/blob/master/lib/samples/chart/dynamic_updates/live_update/real_time_line_chart.dart
+
 import 'dart:async';
+import 'package:chomeurs/Enregistrement/enregistrements.dart';
+import 'package:chomeurs/datadisplay.dart';
+import 'package:flutter/material.dart';
+import 'package:noise_meter/noise_meter.dart';
+
+double? getValue;
 
 class NoiseListen extends StatefulWidget {
   @override
-  _NoiseListenState createState() => new _NoiseListenState();
+  _NoiseListenState createState() => _NoiseListenState();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body:ThirdRoute(),
+    );
+    throw UnimplementedError();
+  }
 }
 
 class _NoiseListenState extends State<NoiseListen> {
   bool _isRecording = false;
+  // ignore: cancel_subscriptions
   StreamSubscription<NoiseReading>? _noiseSubscription;
   late NoiseMeter _noiseMeter;
+  double? maxDB;
+  double? meanDB;
 
   @override
   void initState() {
     super.initState();
-    _noiseMeter = new NoiseMeter(onError);
-  }
-
-  @override
-  void dispose() {
-    _noiseSubscription?.cancel();
-    super.dispose();
+    _noiseMeter = NoiseMeter(onError);
   }
 
   void onData(NoiseReading noiseReading) {
     this.setState(() {
-      if (!this._isRecording) {
-        this._isRecording = true;
-      }
+      if (!this._isRecording) this._isRecording = true;
     });
-    print(noiseReading.toString());
+    maxDB = noiseReading.maxDecibel;
+    meanDB = noiseReading.meanDecibel;
+    getValue = meanDB;
+
   }
 
-  void onError(Object error) {
-    print(error.toString());
+  void onError(Object e) {
+    print(e.toString());
     _isRecording = false;
   }
 
   void start() async {
     try {
       _noiseSubscription = _noiseMeter.noiseStream.listen(onData);
-    } catch (err) {
-      print(err);
+    } catch (e) {
+      print(e);
     }
   }
 
   void stop() async {
     try {
-      if (_noiseSubscription != null) {
-        _noiseSubscription!.cancel();
-        _noiseSubscription = null;
-      }
-      this.setState(() {
-        this._isRecording = false;
-      });
-    } catch (err) {
-      print('stopRecorder error: $err');
+      _noiseSubscription!.cancel();
+      _noiseSubscription = null;
+
+      this.setState(() => this._isRecording = false);
+    } catch (e) {
+      print('stopRecorder error: $e');
     }
   }
 
-  List<Widget> getContent() => <Widget>[
-        Container(
-          color: primaryColor,
-            margin: EdgeInsets.all(25),
-            child: Column(children: [
-              Container(
-                child: Text(_isRecording ? "Microphone: ON" : "Microphone: OFF",
-                    style: TextStyle(fontSize: 25, color: Colors.blue)),
-                margin: EdgeInsets.only(top: 20),
-              )
-            ])),
-      ];
-  Color primaryColor = Color(0xFF9EA2A6);
+  double? getMeanDB(){
+    return getValue;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: primaryColor,
-        body: AccueilEnregistrement(),
-        /*floatingActionButton: FloatingActionButton(
-            backgroundColor: _isRecording ? Colors.red : Colors.green,
-            onPressed: _isRecording ? stop : start,
-            child: _isRecording ? Icon(Icons.stop) : Icon(Icons.mic)),*/
-      ),
-    );
+    // TODO: implement build
+    throw UnimplementedError();
   }
+
 }
