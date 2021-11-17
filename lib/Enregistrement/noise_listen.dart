@@ -1,5 +1,3 @@
-// https://github.com/syncfusion/flutter-examples/blob/master/lib/samples/chart/dynamic_updates/live_update/real_time_line_chart.dart
-
 import 'dart:async';
 import 'package:chomeurs/Enregistrement/enregistrements.dart';
 import 'package:chomeurs/datadisplay.dart';
@@ -17,13 +15,11 @@ class NoiseListen extends StatefulWidget {
     return const Scaffold(
       body:ThirdRoute(),
     );
-    throw UnimplementedError();
   }
 }
 
 class _NoiseListenState extends State<NoiseListen> {
   bool _isRecording = false;
-  // ignore: cancel_subscriptions
   StreamSubscription<NoiseReading>? _noiseSubscription;
   late NoiseMeter _noiseMeter;
   double? maxDB;
