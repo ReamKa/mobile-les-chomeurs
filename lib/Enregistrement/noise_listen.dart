@@ -38,7 +38,6 @@ class _NoiseListenState extends State<NoiseListen> {
     maxDB = noiseReading.maxDecibel;
     meanDB = noiseReading.meanDecibel;
     getValue = meanDB;
-
   }
 
   void onError(Object e) {
@@ -65,12 +64,13 @@ class _NoiseListenState extends State<NoiseListen> {
     }
   }
 
-  double? getMeanDB(){
+  double? getMeanDB() {
     return getValue;
   }
-  
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     throw UnimplementedError();
   }
+}
