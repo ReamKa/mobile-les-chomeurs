@@ -1,6 +1,10 @@
 # Decibam - Une application en Flutter pour mesurer le taux de bruits alentours
 
-Team:  Ream Sadaoui   Oguzhan Kilic    Henri Spaulding   Jules Audebert   Thibault Lepoivre    Ilyes Habki   Bryan Dane KWUIMO KWEKAM
+Team:  Ream SADOUI   Oguzhan KILIC    Henri SPAULDING   Jules AUDEBERT   Thibault LEPOIVRE    Ilyes HABKI   Bryan Dane KWUIMO KWEKAM
+
+# CE GIT CONTIENT L'APPLICATION FONCTIONNEL !!! Git de l'ancien repo contenant les premiers commits ci dessous : 
+
+Git:  https://github.com/gudrian1/decibel_chomeur
 
 ## What 
 
