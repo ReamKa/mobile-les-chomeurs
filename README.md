@@ -9,7 +9,7 @@ Git:  https://github.com/gudrian1/decibel_chomeur
 ## What 
 
 Notre compteur Decibel mesure les niveaux sonores en calculant la pression des ondes sonores voyageant dans l'air à partir d'une source de bruit.
-Cependant, ce qui fait qu'un son semble plus fort qu'un autre est la quantité d'énergie que la source du son pompe vers l'auditeur sous la forme de variations de pression dans l'air. C'est ce qu’on appelle l'intensité du son et c'est une chose objective, quelque chose sur laquelle nous pouvons facilement mesurer et nous mettre d'accord.
+Ce qui fait qu'un son semble plus fort qu'un autre est la quantité d'énergie que la source du son pompe vers l'auditeur sous la forme de variations de pression dans l'air. C'est ce que l'on appelle l'intensité du son et représente une chose objective, quelque chose que nous pouvons facilement mesurer et nous mettre d'accord. Ce projet a été realisé dans le cadre d'un projet de l'EPSI Paris par des étudiants en B3 DevOps via l'outil Flutter.
 
 ## Why
 
